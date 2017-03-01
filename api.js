@@ -14,13 +14,11 @@ router.post('/signin', (req, res) => {
       return res.redirect('/login');
     }
     res.cookie('uid', u.uid, {
-      domain: 'localhost',
       path: '/'
     })
 
     if (u.username === 'testA') {
       res.cookie('abtesting', shasum(u.uid), {
-        domain: 'localhost',
         path: '/'
       })
     }
